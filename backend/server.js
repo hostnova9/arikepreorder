@@ -7,4 +7,5 @@ app.get('/admin/login',(req,res)=>res.sendFile(__dirname+'/public/admin-login.ht
 app.get('/',(req,res)=>res.sendFile(__dirname+'/public/index.html'));
 app.get('/api/health',async(req,res)=>{try{const r=await pool.query('SELECT NOW()');res.json({success:true,status:'healthy',database:'connected',databaseTime:r.rows[0].now})}catch(e){res.status(500).json({success:false,status:'database connection failed'})}});
 const PORT=process.env.PORT||5000;
-migrate().then(()=>app.listen(PORT,()=>{console.log('-----------------------------------');console.log('ArikePreorder v0.11 AI + Enquiries + OTP + Communications');console.log('Server running on port '+PORT);console.log('Database upgrade complete');console.log('-----------------------------------')})).catch(e=>{console.error('Database migration failed:',e);process.exit(1)});
+if (require.main === module) migrate().then(()=>app.listen(PORT,()=>{console.log('-----------------------------------');console.log('ArikePreorder v0.11 AI + Enquiries + OTP + Communications');console.log('Server running on port '+PORT);console.log('Database upgrade complete');console.log('-----------------------------------')})).catch(e=>{console.error('Database migration failed:',e);process.exit(1)});
+module.exports = app;

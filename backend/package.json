@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node server.js",
+    "deploy": "wrangler deploy",
+    "build": "echo Cloudflare Wrangler bundles the Worker on deploy"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +20,8 @@
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "pg": "^8.23.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
   }
 }
