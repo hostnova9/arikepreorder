@@ -1,0 +1,13 @@
+ArikePreorder v0.10 — Admin Marketplace Control Centre
+
+Added:
+- Database-driven Admin-selected Trending products.
+- Admin can add/remove products from Trending without deleting seller listings.
+- Trending priority and optional expiry.
+- Database-driven promotional banner management.
+- Banner tag, headline, message, tone, priority, action/link, start/end scheduling.
+- Pause/activate/delete promotional banners.
+- Marketplace home now consumes Admin Trending and active scheduled banners.
+- Existing 12-hour personal notification banner rotation remains separate.
+
+Run the backend normally. migrate.js creates the new tables automatically.

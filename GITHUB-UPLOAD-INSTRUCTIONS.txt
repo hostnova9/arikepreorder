@@ -1,0 +1,5 @@
+GitHub-ready project source. Do not upload any .env files or database backups.
+Upload the extracted folders/files (not this ZIP as a single file).
+Check for secrets in all files before committing.
+The .env.example values are blank; configure actual secrets only on the hosting provider.
+This package does not contain a PostgreSQL data backup.

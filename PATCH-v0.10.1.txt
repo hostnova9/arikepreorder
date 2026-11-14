@@ -1,0 +1,15 @@
+ArikePreorder v0.10.1 — Admin Communications
+
+Added Admin Communications to the existing Admin Centre.
+- Send to selected users, all buyers, approved sellers, or everyone.
+- In-app, branded email, or both.
+- ArikePreorder branded email template and security footer.
+- Sent-message audit/history with recipient and delivery counts.
+- Email is only marked accepted when the configured provider accepts it.
+- In-app messages work without email configuration.
+
+Optional email environment variables:
+RESEND_API_KEY=...
+ARIKE_FROM_EMAIL=ArikePreorder <notifications@your-verified-domain.com>
+
+Never commit the real .env file.

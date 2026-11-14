@@ -1,0 +1,8 @@
+ArikePreorder v0.10.4 — Mobile Sidebar Fix
+- Mobile drawer width corrected to 82vw (max 320px)
+- Navigation forced into a clean vertical stack
+- Close button fixed inside the sticky drawer header
+- Drawer scrolls vertically on small phones
+- Outside backdrop closes the drawer
+- Body scrolling is locked while drawer is open
+- Desktop sidebar is unchanged

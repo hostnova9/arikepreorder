@@ -1,0 +1,23 @@
+ArikePreorder v0.9.3 — Secure Admin Centre + KYC Review
+
+- Removed ADMIN_EMAILS customer-token shortcut from Admin authentication.
+- Added separate /admin/login page with Admin email + password.
+- Added admin_users table. Passwords are bcrypt-hashed; raw passwords are never stored in PostgreSQL.
+- ADMIN_EMAIL + ADMIN_PASSWORD are used only to bootstrap the first admin account if it does not exist.
+- Admin JWT is separate from customer/seller JWT and expires after 8 hours.
+- /api/admin routes require a valid active admin account.
+- KYC review loads directly from kyc_submissions and shows the latest submission for every user.
+- KYC Verify / Under Review / Needs Attention updates the user's Account verification status and creates a notification.
+- Seller approval and withdrawal review remain in Admin Centre.
+- Removed obsolete deposit-approval panel/API from Admin Centre; Paystack handles wallet deposits.
+
+First local setup:
+1. Keep your existing .env.
+2. Add:
+   ADMIN_EMAIL=your-admin-email@example.com
+   ADMIN_PASSWORD=choose-a-strong-password-at-least-10-characters
+3. Restart node server.js. The initial admin account is created and password is hashed.
+4. Open http://localhost:5000/admin/login
+5. Sign in with the Admin credentials above.
+
+Security note: do not commit .env to GitHub.

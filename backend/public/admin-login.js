@@ -1,0 +1,3 @@
+const form=document.getElementById('form'),msg=document.getElementById('msg');
+if(localStorage.getItem('arike_admin_token')) fetch('/api/admin/auth/me',{headers:{Authorization:'Bearer '+localStorage.getItem('arike_admin_token')}}).then(r=>r.ok&&(location.href='/admin'));
+form.addEventListener('submit',async e=>{e.preventDefault();msg.innerHTML='';try{const r=await fetch('/api/admin/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email.value.trim(),password:password.value})});const d=await r.json();if(!r.ok)throw Error(d.message||'Unable to sign in.');localStorage.setItem('arike_admin_token',d.token);location.href='/admin'}catch(e){msg.innerHTML='<div class="notice danger">'+e.message+'</div>'}});

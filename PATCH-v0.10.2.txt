@@ -1,0 +1,10 @@
+ArikePreorder v0.10.2 — Responsive Trending + Verified Seller Identity
+
+- Replaces the desktop "Sell on Arike" sidebar promo with an Admin-controlled rotating Trending product showcase.
+- Adds Admin-selected Trending products into the main dashboard rotating banner with a fire label.
+- Removes the duplicate desktop "People are loving these" Trending block.
+- Adds a compact horizontal Trending carousel on mobile.
+- Adds a mobile hamburger drawer while preserving the bottom navigation for frequent actions.
+- Product posts and Trending placements now use the seller's approved business name when available.
+- A green verified dot is shown only when the linked business status is approved by ArikePreorder.
+- Marketplace /home API now joins business identity/status for both normal products and Trending products.

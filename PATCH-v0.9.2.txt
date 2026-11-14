@@ -1,0 +1,10 @@
+ArikePreorder v0.9.2 – Paystack Credit Fix
+
+Fixes PostgreSQL error 42P10 during verified wallet deposits.
+- Keeps the partial unique index protecting non-null wallet transaction references.
+- Uses ON CONFLICT DO NOTHING without an inference target, which works with the existing partial unique index.
+- Keeps payment verification and wallet credit inside one database transaction.
+- Repeated callbacks/verification attempts do not credit the wallet twice.
+- Returns a clear "already verified" message for an already-successful deposit.
+
+No Paystack secret keys are included in this ZIP. Keep the existing backend/.env file.

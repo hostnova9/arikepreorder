@@ -1,0 +1,7 @@
+ArikePreorder v0.10.5
+- Mobile bottom navigation now uses explicit working destinations.
+- Seller Admin review is status-aware: accepted sellers show Approved/Accepted rather than another Accept button.
+- Seller filters: All, Pending, Approved, Rejected.
+- Admin Users directory with username, email, phone, KYC, seller/account status and Manage view.
+- Admin can suspend/restore accounts and jump to Communications for a selected user.
+- VIP Shopper + VIP Seller sidebar entries merged into one VIP Membership page.

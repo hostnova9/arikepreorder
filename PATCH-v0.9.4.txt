@@ -1,0 +1,11 @@
+ArikePreorder v0.9.4 — Seller Earnings + Business Registration + Banner Cleanup
+
+- Clarifies personal Wallet vs Seller Earnings.
+- Seller Earnings has Held and Available balances.
+- Adds PIN-protected Available Earnings -> Wallet internal transfer.
+- Held Earnings cannot be transferred.
+- Internal transfers create linked seller-wallet and wallet transaction ledger records.
+- Business application now collects Nigerian state, city/LGA, real operating address and location confirmation.
+- CAC registration is optional; CAC fields appear only when seller selects Yes.
+- Banner notifications are deduplicated and personal banner entries remain limited to the 12-hour window.
+- Carousel surfaces use calmer ArikePreorder plum/earth/mint tones with less bright white.

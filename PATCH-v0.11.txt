@@ -1,0 +1,20 @@
+ArikePreorder v0.11 — Ask Arike AI + Product Enquiries + OTP + Communications
+
+Added:
+- Ask Arike AI page with marketplace FAQs and automatic suggested questions.
+- Product-aware Ask Arike: product cards open AI with that product highlighted.
+- AI answers known product/platform facts and escalates seller-only questions into protected enquiries.
+- Seller Centre > Order Enquiries with reply and resolve controls.
+- Admin Centre > Ask Arike Enquiries oversight showing buyer/AI/seller conversation history.
+- Contact-sharing filters for protected product enquiries.
+- Email OTP request/verification with hashed codes, 10-minute expiry and 60-second resend limit.
+- Resend-backed branded OTP email when RESEND_API_KEY + ARIKE_FROM_EMAIL are configured.
+- Existing notification bell is fed by enquiry, verification, order, Help Pay, Admin and seller events.
+- Public /partnership proposal page for the ArikePreorder strategic ownership partnership and OptiSave launch-promotion responsibility.
+- Mobile sidebar layout patch keeps the drawer scrollable and Logout sticky/accessible at the bottom.
+
+Important production notes:
+- Replace YOURDOMAIN on partnership.html after the domain is purchased.
+- Email OTP is real when Resend/domain sender is configured. Development mode exposes a test code only for local testing.
+- SMS OTP is not faked; connect an SMS provider before enabling phone OTP.
+- Ask Arike in this build is rules/data-driven. A production LLM provider can later be added behind the same API while keeping seller escalation and Admin oversight.

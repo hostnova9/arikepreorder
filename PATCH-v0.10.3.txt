@@ -1,0 +1,10 @@
+ArikePreorder v0.10.3 — Public Homepage + Routing
+
+- / is now a public ArikePreorder landing page instead of redirecting to Login.
+- Public page explains discovery, verified sellers, Help Pay My Cart, seller onboarding and order journey.
+- Login and Create Account remain the gateway to protected marketplace/account features.
+- Marketplace Logout clears arike_token and returns to /.
+- Login/Register include a route back to the public homepage.
+- Responsive public navigation and mobile landing layout added.
+
+Keep your existing backend/.env when upgrading.
