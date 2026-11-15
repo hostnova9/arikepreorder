@@ -1,12 +1,18 @@
 {
-  "name": "arikepreorder-cloudflare",
-  "version": "0.12.2",
-  "private": true,
-  "type": "commonjs",
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
     "deploy": "wrangler deploy",
-    "build": "wrangler deploy --dry-run"
+    "build": "echo Cloudflare Wrangler bundles the Worker on deploy"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
