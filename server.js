@@ -1,0 +1,11 @@
+require('dotenv').config();
+const express=require('express'),cors=require('cors'),pool=require('./db'),migrate=require('./migrate');
+const authRoutes=require('./routes/auth'),businessRoutes=require('./routes/business'),marketplaceRoutes=require('./routes/marketplace'),sellerOpsRoutes=require('./routes/sellerOps'),walletRoutes=require('./routes/wallet'),adminRoutes=require('./routes/admin'),askArikeRoutes=require('./routes/askArike');
+const app=express();app.use(cors());app.use(express.json({limit:'8mb'}));app.use(express.static('public'));app.use('/api/auth',authRoutes);app.use('/api/business',businessRoutes);app.use('/api/marketplace',marketplaceRoutes);app.use('/api/seller',sellerOpsRoutes);app.use('/api/wallet',walletRoutes);app.use('/api/admin',adminRoutes);app.use('/api/ask-arike',askArikeRoutes);
+['register','login','forgot','reset','dashboard','account','seller','cart','orders','help-pay','welcome','wallet','deposit','admin','admin-login','vip','ask-arike','partnership'].forEach(p=>app.get('/'+p,(req,res)=>res.sendFile(__dirname+'/public/'+p+'.html')));
+app.get('/admin/login',(req,res)=>res.sendFile(__dirname+'/public/admin-login.html'));
+app.get('/',(req,res)=>res.sendFile(__dirname+'/public/index.html'));
+app.get('/api/health',async(req,res)=>{try{const r=await pool.query('SELECT NOW()');res.json({success:true,status:'healthy',database:'connected',databaseTime:r.rows[0].now})}catch(e){res.status(500).json({success:false,status:'database connection failed'})}});
+const PORT=process.env.PORT||5000;
+if (require.main === module) migrate().then(()=>app.listen(PORT,()=>{console.log('-----------------------------------');console.log('ArikePreorder v0.11 AI + Enquiries + OTP + Communications');console.log('Server running on port '+PORT);console.log('Database upgrade complete');console.log('-----------------------------------')})).catch(e=>{console.error('Database migration failed:',e);process.exit(1)});
+module.exports = app;

@@ -1,9 +1,18 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "arikepreorder",
-  "main": "backend/worker.js",
+  "main": "backend/worker.mjs",
   "compatibility_date": "2026-11-14",
-  "compatibility_flags": ["nodejs_compat", "nodejs_compat_populate_process_env"],
-  "assets": {"directory": "./backend/public", "binding": "ASSETS", "run_worker_first": true},
-  "observability": {"enabled": true}
+  "compatibility_flags": [
+    "nodejs_compat",
+    "nodejs_compat_populate_process_env"
+  ],
+  "assets": {
+    "directory": "./backend/public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "observability": {
+    "enabled": true
+  }
 }
