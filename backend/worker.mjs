@@ -4,7 +4,8 @@ import { createServer } from 'node:http';
 import { httpServerHandler } from 'cloudflare:node';
 import app from './server.js';
 const server = createServer(app);
-const apiHandler = httpServerHandler({ port: 8787, server });
+server.listen(8787);
+const apiHandler = httpServerHandler({ port: 8787 });
 const pages = new Set(['register','login','forgot','reset','dashboard','account','seller','cart','orders','help-pay','welcome','wallet','deposit','admin','admin-login','vip','ask-arike','partnership']);
 export default {
   async fetch(request, env, ctx) {
