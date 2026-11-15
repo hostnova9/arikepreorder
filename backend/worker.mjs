@@ -20,3 +20,4 @@ export default {
     return env.ASSETS.fetch(new Request(url, request));
   }
 };
+// Trigger fresh Cloudflare deployment
