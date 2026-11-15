@@ -14,7 +14,7 @@ export default {
       return apiHandler.fetch(request, env, ctx);
     }
     if (url.pathname === '/admin/login') url.pathname = '/admin-login.html';
-    if (url.pathname === '/admin/login') url.pathname = '/admin-login.html';
+else if (url.pathname === '/') url.pathname = '/index.html';
 else if (pages.has(url.pathname.slice(1))) url.pathname += '.html';
     // Static frontend assets are served by Cloudflare Assets, not Express.sendFile.
     return env.ASSETS.fetch(new Request(url, request));
