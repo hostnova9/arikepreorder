@@ -1,12 +1,12 @@
 // Experimental Cloudflare Worker adapter for existing Express API.
 // Node HTTP server is never bound to a TCP port on Cloudflare.
-const { createServer } = require('node:http');
-const { httpServerHandler } = require('cloudflare:node');
-const app = require('./server');
+import { createServer } from 'node:http';
+import { httpServerHandler } from 'cloudflare:node';
+import app from './server.js';
 const server = createServer(app);
 const apiHandler = httpServerHandler({ port: 8787, server });
 const pages = new Set(['register','login','forgot','reset','dashboard','account','seller','cart','orders','help-pay','welcome','wallet','deposit','admin','admin-login','vip','ask-arike','partnership']);
-module.exports = {
+export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname.startsWith('/api/')) {
