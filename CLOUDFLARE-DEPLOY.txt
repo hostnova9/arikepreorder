@@ -1,0 +1,7 @@
+ArikePreorder v0.12.2 dependency resolution fix
+
+Root package.json declares dependencies for Wrangler builds launched from the repository root.
+Cloudflare: Worker Build command: npm install (or npm ci if lockfile present). Deploy command: npx wrangler deploy. Root directory: / (repository root).
+Do not add DATABASE_URL until the Worker builds. Store it as a secret, never in GitHub.
+This patch addresses missing dependency resolution, NOT verified Worker runtime compatibility.
+Do not enable live payments or connect the production domain until end-to-end testing passes.

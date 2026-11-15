@@ -1,0 +1,21 @@
+{
+  "name": "arikepreorder-cloudflare",
+  "version": "0.12.2",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "build": "wrangler deploy --dry-run"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.23.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
