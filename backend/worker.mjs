@@ -3,6 +3,7 @@
 import { createServer } from 'node:http';
 import { httpServerHandler } from 'cloudflare:node';
 import app from './server.js';
+import db from './db.js';
 const server = createServer(app);
 server.listen(8787);
 const apiHandler = httpServerHandler({ port: 8787 });
@@ -12,7 +13,7 @@ export default {
     const url = new URL(request.url);
     if (url.pathname.startsWith('/api/')) {
       // API requests are forwarded to Express. Database credentials are Worker secrets.
-      return apiHandler.fetch(request, env, ctx);
+      return db.withRequest(env, ctx, () => apiHandler.fetch(request, env, ctx));
     }
     if (url.pathname === '/admin/login') url.pathname = '/admin-login.html';
 else if (url.pathname === '/') url.pathname = '/index.html';
