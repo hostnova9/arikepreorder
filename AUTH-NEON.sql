@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS login_challenges (id text PRIMARY KEY,kind text NOT NULL,subject text NOT NULL,email text NOT NULL,code_hash text NOT NULL,created_at timestamptz NOT NULL DEFAULT now(),attempts integer NOT NULL DEFAULT 0,used boolean NOT NULL DEFAULT false,UNIQUE(kind,subject));
