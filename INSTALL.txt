@@ -1,0 +1,6 @@
+ArikePreorder authentication patch
+Upload the contents of this ZIP to the existing GitHub repository root, preserving backend paths. Replace the five existing files; do not replace the repository or database. Commit to the connected production branch. Wait for Cloudflare build/deploy to finish and confirm the new active version.
+No new SQL migration required if AUTH-NEON.sql was already applied. Do not remove data.
+Verify Cloudflare production runtime configuration: DATABASE_URL, JWT_SECRET, RESEND_API_KEY (secrets), ARIKE_FROM_EMAIL (verified sender). ADMIN_EMAIL and ADMIN_PASSWORD are only for first admin creation; an existing admin uses its database password. Rotate any exposed password; do not upload secrets. Keep JWT_SECRET unchanged to avoid invalidating sessions unnecessarily.
+Test customer and admin login separately, then OTP, then dashboard. If login fails, search Observability for AUTH_OTP_FAILURE or AUTH_OTP_RESEND_STATUS. These report the stage without printing codes or secrets. Confirm Resend domain is verified and logs have the right API key filter.
+Syntax checked; live Cloudflare/Neon/Resend not tested. Existing table schema and OTP hash format are retained.

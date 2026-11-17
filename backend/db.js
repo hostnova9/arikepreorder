@@ -31,7 +31,7 @@ async function withRequest(env, ctx, handler) {
     }
   });
 }
-module.exports = new Proxy({ withRequest }, {
+module.exports = new Proxy({ withRequest, requestEnv: () => scope.getStore()?.env || process.env }, {
   get(target, key) {
     if (key in target) return target[key];
     const pool = currentPool();
