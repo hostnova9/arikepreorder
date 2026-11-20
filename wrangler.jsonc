@@ -13,6 +13,8 @@
 "html_handling": "none",
 "run_worker_first": true
 },
+"keep_vars": true,
+"vars": {"ARIKE_FROM_EMAIL": "noreply@arikepreorder.site"},
 "observability": {
 "enabled": true
 }
